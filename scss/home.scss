@@ -1,0 +1,387 @@
+.page {
+   padding-top: rem(172);
+   @media (max-width: $tablet) {
+      padding-top: rem(122);
+   }
+   @media (max-width: $mobile) {
+      padding-top: rem(100);
+   }
+}
+
+.banner {
+   position: relative;
+   z-index: 1;
+
+   &__image,
+   &__gradient {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         @media (max-width: $tablet) {
+            width: unset;
+            height: 100%;
+         }
+      }
+   }
+
+   &__body {
+      padding-top: rem(135);
+      padding-bottom: rem(135);
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      @media (max-width: $tablet) {
+         padding-top: rem(65);
+         padding-bottom: rem(260);
+      }
+   }
+
+   &__label {
+      display: none;
+      @media (max-width: $tablet) {
+         display: block;
+         font-size: rem(28);
+         margin-bottom: rem(154);
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: rem(50);
+      margin-bottom: rem(23);
+      span {
+         display: block;
+         @include adaptiveValue("font-size", 50, 28);
+         @media (max-width: $mobile) {
+            font-weight: 300;
+            margin-bottom: rem(15);
+         }
+      }
+      @media (max-width: $tablet) {
+         max-width: rem(360);
+      }
+   }
+
+   &__text {
+      font-weight: 300;
+      @include adaptiveValue("font-size", 36, 28);
+      line-height: math.div(44.93, 36);
+      opacity: 0.75;
+   }
+}
+
+.insights {
+   background-color: #ebebeb;
+   padding-top: rem(50);
+   padding-bottom: rem(50);
+   @media (max-width: $mobile) {
+      background-color: #001a7a;
+   }
+
+   &__title {
+      margin-bottom: rem(20);
+      @media (max-width: $mobile) {
+         color: #fff;
+      }
+   }
+
+   &__slider {
+      @media (max-width: em(1150)) {
+         overflow: visible !important;
+         position: relative;
+         &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            background-color: #ebebeb;
+            transform: translate(-101%, -2%);
+            width: 100vw;
+            height: 105%;
+            @media (max-width: $mobile) {
+               background-color: #001a7a;
+            }
+         }
+      }
+      @media (max-width: $mobile) {
+         .swiper-slide {
+            transform: scale(0.9) translateY(-5.5%);
+            transition: all 0.3s ease 0s;
+         }
+         .swiper-slide-active {
+            transform: scale(1);
+            transition: all 0.3s ease 0s;
+         }
+      }
+   }
+
+   &__slide {
+      box-shadow: -3px 2px 3px 1px rgba(0, 0, 0, 0.1), 0 0 9px 1px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+   }
+}
+.slide-insights {
+
+   &__1 {
+      .slide-insights__underline {
+         background-color: #1450d2;
+      }
+      .slide-insights__title {
+         color: #1450d2;
+      }
+   }
+
+   &__body {
+      padding: rem(25) rem(25) rem(15);
+   }
+
+   &__img {
+      display: block;
+      margin-bottom: rem(25);
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         z-index: 1;
+         left: rem(-3);
+         top: rem(-2);
+         width: 27%;
+         height: 36%;
+         background: url("@img/insights/triangel.png") 0 0 / cover no-repeat;
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         z-index: 1;
+         right: rem(-2);
+         bottom: rem(-2);
+         width: 27%;
+         height: 36%;
+         background: url("@img/insights/triangel.png") 0 0 / cover no-repeat;
+         transform: rotate(-180deg);
+      }
+      img {
+         width: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__title {
+      font-size: rem(35);
+      font-weight: 700;
+   }
+
+   &__underline {
+      min-height: rem(12);
+   }
+
+   &__2 {
+      .slide-insights__underline {
+         background-color: #01a49c;
+      }
+      .slide-insights__title {
+         color: #01a49c;
+      }
+   }
+
+   &__3 {
+      .slide-insights__underline {
+         background-color: #009bfa;
+      }
+      .slide-insights__title {
+         color: #009bfa;
+      }
+   }
+}
+
+.connect {
+   background: url("@img/contact/bg.png") 0 0 / cover no-repeat;
+   background-color: #1450d2 !important;
+
+   &__top {
+      height: rem(24);
+      background: url("@img/contact/top-line.png") 0 0 no-repeat;
+   }
+
+   &__body {
+      padding: rem(75) 0;
+      text-align: center;
+      color: #f7f7f7;
+      text-shadow: -3px 2px 3px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2);
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: rem(40);
+      line-height: math.div(52, 40);
+      margin-bottom: rem(10);
+   }
+
+   &__text {
+      font-size: rem(24);
+      line-height: math.div(33, 24);
+      margin-bottom: rem(50);
+   }
+
+   &__bottom {
+      height: rem(24);
+      background: url("@img/contact/bttm-line.png") 0 0 no-repeat;
+   }
+}
+
+.events {
+   padding-top: rem(50);
+   @include adaptiveValue("padding-bottom", 100, 26);
+   background-color: #ebebeb;
+
+   &__title {
+      margin-bottom: rem(37);
+   }
+
+   &__slider {
+      padding-top: rem(19);
+      @media (max-width: em(1350)) {
+         overflow: visible !important;
+         position: relative;
+         &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            background-color: #ebebeb;
+            transform: translate(-101%, -2%);
+            width: 100vw;
+            height: 105%;
+         }
+      }
+      @media (max-width: $mobile) {
+         .swiper-slide {
+            transform: scale(0.8);
+            transition: all 0.3s ease 0s;
+         }
+         .swiper-slide-active {
+            transform: scale(1);
+            transition: all 0.3s ease 0s;
+         }
+      }
+   }
+
+   &__slide {
+      height: 100%;
+   }
+
+   &__logo {
+      display: none;
+      @media (max-width:$mobile){
+          display: block;
+          margin-top: rem(69);
+          text-align: center;
+      }
+   }
+}
+.slide-events {
+
+   &__body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #1450d2;
+      padding: rem(90) rem(24) 0 rem(24);
+      color: #f7f7f7;
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         left: rem(5);
+         top: rem(-10);
+         width: 0;
+         height: 0;
+         border-left: rem(15) solid transparent;
+         border-right: rem(15) solid transparent;
+         border-bottom: rem(15) solid #3b4e96;
+         transform: rotate(135deg);
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         height: rem(76);
+         background: url("@img/events/gradient.png") 0 0 / cover no-repeat;
+      }
+   }
+
+   &__date {
+      position: absolute;
+      left: rem(25);
+      top: rem(-20);
+      background-color: #001254;
+      width: rem(93);
+      height: rem(86);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #ffffff;
+   }
+
+   &__date-month {
+      font-size: rem(16);
+   }
+
+   &__date-num {
+      font-weight: 700;
+      font-size: rem(36);
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: rem(28);
+      margin-bottom: rem(4);
+      @media (max-width: $mobile) {
+         font-size: rem(40);
+      }
+   }
+
+   &__text {
+      font-size: rem(15);
+      margin-bottom: rem(21);
+      flex: 1 1 auto;
+      @media (max-width: $mobile) {
+         font-size: rem(28);
+      }
+   }
+
+   &__button {
+      padding: rem(16) rem(21);
+      margin-bottom: rem(48);
+      width: fit-content;
+      @media (any-hover: hover){
+         &:hover{
+            background-color: #001a7a;
+         }
+      }
+   }
+
+   &__city {
+      padding: rem(13) rem(23);
+      text-align: right;
+      background: url("@img/events/ascent.png") 0 0 / cover no-repeat;
+      font-weight: 700;
+      font-size: rem(24);
+      margin-right: rem(-25);
+      color: #000;
+      position: relative;
+      z-index: 2;
+   }
+}
+
